@@ -65,10 +65,11 @@ export const getSearchResultsPage = function (page = state.search.page) {
   return state.search.results.slice(start, end);
 };
 
-// export const getSearchResultsPage = function (page = state.search.page) {
-//   model.state.search.page = page;
-//   const start = (page - 1) * model.state.search.resultsPerPage; //0;
-//   const end = page * model.state.search.resultsPerPage; //9;
+export const updateServings = function (newServings) {
+  state.recipe.ingredients.forEach(ing => {
+    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+    // newQt = oldQt * newServings / oldServings // 2 * 8 / 4 = 4
+  });
 
-//   return model.state.search.results.slice(start, end);
-// };
+  state.recipe.servings = newServings;
+};
