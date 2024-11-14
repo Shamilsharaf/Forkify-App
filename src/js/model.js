@@ -1,10 +1,3 @@
-// Import environment variables from process.env
-const API_URL =
-  process.env.PARCEL_API_URL ||
-  'https://forkify-api.herokuapp.com/api/v2/recipes/';
-const KEY =
-  process.env.PARCEL_API_KEY || 'd3f9e700-0549-46d5-ad23-d5704e176fe3';
-
 import { async } from 'regenerator-runtime';
 import { API_URL, RES_PER_PAGE, KEY } from './config.js';
 // import { getJSON, sendJSON } from './helpers.js';
